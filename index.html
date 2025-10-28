@@ -108,14 +108,21 @@
         }
 
         .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
-            letter-spacing: 3px;
+            display: flex;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+            filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5));
+            transition: all 0.3s ease;
+        }
+
+        .logo img:hover {
+            filter: drop-shadow(0 0 35px rgba(255, 0, 255, 0.7));
+            transform: scale(1.03);
         }
 
         nav {
@@ -379,6 +386,9 @@
             color: var(--primary);
             margin: 0;
             line-height: 1.2;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         .solution-card p {
@@ -451,6 +461,10 @@
 
         /* Responsive */
         @media (max-width: 968px) {
+            .logo img {
+                height: 60px;
+            }
+
             .hero-content {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -486,8 +500,8 @@
         }
 
         @media (max-width: 640px) {
-            .logo {
-                font-size: 1.3rem;
+            .logo img {
+                height: 50px;
             }
 
             nav {
@@ -532,7 +546,9 @@
 
     <!-- Header -->
     <header>
-        <div class="logo">HOLOCODEX LABS</div>
+        <a href="#" class="logo">
+            <img src="logo.png" alt="HoloCodex Labs">
+        </a>
         <nav>
             <a href="#business">Business</a>
             <a href="#cybersecurity">Cybersecurity</a>
